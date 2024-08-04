@@ -1,22 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { useEffect, useState } from 'react';
+import NumberBlocks from './Components/NumberBlocks/NumberBlocks';
 
 function App() {
+  const [inputNum, setInputNum] = useState(0)
+  const [tens, setTens] = useState(0)
+  const [ones, setOnes] = useState(0)
+
+useEffect(() => {
+  setTens(Math.floor(inputNum / 10))
+  setOnes(inputNum % 10)
+}, [inputNum])
+
+  console.log('inputNum', inputNum);
+  console.log('tens', tens);
+  console.log('ones', ones);
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload!!!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <input type='number' onChange={(e) => setInputNum(Number(e.target.value))}/>
+        <NumberBlocks tens={tens} ones={ones} />
       </header>
     </div>
   );
