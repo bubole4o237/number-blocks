@@ -18,7 +18,7 @@ useEffect(() => {
   return (
     <div className="App">
       <header className="App-header">
-        <input type='number' onChange={(e) => setInputNum(Number(e.target.value))}/>
+        <input type='number' onChange={(e) => { if (e.target.value <= 201 && e.target.value >=0) setInputNum(Number(e.target.value))}}/>
         <NumberBlocks tens={tens} ones={ones} />
       </header>
     </div>
