@@ -1,17 +1,12 @@
 import './NumberBlocks.scss'
 
 const NumberBlocks = ({tens, ones}) => {
-    console.log('.......TENS..........', tens);
-    console.log('.......ONES..........', ones);
 
     return(
-        <>
-            {/* <p>Tens: {tens}</p> */}
-            {/* <p>Ones: {ones}</p> */}
             <div className='numbers-container'>
                 {tens ? <div className='tens-container'>
                     {new Array(tens).fill(0).map((el, index) => 
-                        <div className='index-tens-container'>
+                        <div key={index} className='index-tens-container'>
                             <div className='index-tens'>{index + 1}</div>
                             <div className='one-tens'>
                                 <div className='one-square'>{(index * 10) + 1}</div>
@@ -31,12 +26,11 @@ const NumberBlocks = ({tens, ones}) => {
                 : null }
                 {ones ? <div className='ones-container'>
                     {new Array(ones).fill(0).map((el, index) => 
-                        <div className='one-square'>{(tens * 10) + index + 1}</div>
+                        <div key={index} className='one-square'>{(tens * 10) + index + 1}</div>
                     )}
                 </div>
                 : null}
             </div>
-        </>
     )
 }
 

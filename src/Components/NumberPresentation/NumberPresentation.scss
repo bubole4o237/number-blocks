@@ -1,0 +1,54 @@
+.number-presentation {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    gap: 12px;
+
+    .left {
+        display: flex;
+        flex-direction: column;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+
+        .top-left {
+            width: 14px;
+            height: 30px
+        }
+
+        .bottom-left {
+        }
+       
+    }
+
+    .right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+
+        .top-right {}
+
+        .bottom-right {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+    }
+    
+    .number-boxes-row-container {
+        display: flex; 
+        gap: 4px;
+        
+        .number-box {
+            width: 30px;
+            height: 30px;
+            background: green;
+            border-radius: 2px;
+
+        }
+    }
+}

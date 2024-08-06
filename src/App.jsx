@@ -1,6 +1,7 @@
-import './App.scss';
-import { useEffect, useState } from 'react';
-import NumberBlocks from './Components/NumberBlocks/NumberBlocks';
+import { useEffect, useState } from 'react'
+import NumberBlocks from './Components/NumberBlocks/NumberBlocks'
+import NumberPossibleCombination from './Components/NumberPossibleCombination'
+import './App.scss'
 
 function App() {
   const [inputNum, setInputNum] = useState(0)
@@ -12,17 +13,15 @@ useEffect(() => {
   setOnes(inputNum % 10)
 }, [inputNum])
 
-  console.log('inputNum', inputNum);
-  console.log('tens', tens);
-  console.log('ones', ones);
   return (
     <div className="App">
       <header className="App-header">
         <input type='number' onChange={(e) => { if (e.target.value <= 201 && e.target.value >=0) setInputNum(Number(e.target.value))}}/>
         <NumberBlocks tens={tens} ones={ones} />
+        <NumberPossibleCombination number={inputNum} />
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
